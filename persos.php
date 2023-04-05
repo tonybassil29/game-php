@@ -1,4 +1,6 @@
-<?php require_once('functions.php'); ?>
+<?php require_once('functions.php');
+
+ ?>
 <?php 
     if (!isset($_SESSION['user'])) {
         header('Location: login.php');
@@ -29,8 +31,8 @@
     <title>Document</title>
 </head>
 <body>
-    <?php require_once('nav.php'); ?>
-    <h1><?php echo $_SESSION['user']['email']; ?> Votre profil</h1>
+    <?php require_once('_nav.php'); ?>
+    <h1> Votre profil</h1>
     <a href="persos_add.php">Créer un personnage</a>
 
     <?php if (isset($_GET['msg'])) {
@@ -52,23 +54,25 @@
                     <td><?php echo $perso['id']; ?></td>
                     <td><?php echo $perso['name']; ?></td>
                     <td>
-                        <a href="persos_del.php?id=<?php echo $perso['id']; ?>" onClick="return confirm('Voulez vous vraiment supprimer ce personnage ?');">Supprimer</a>
+                        <a 
+                        class="btn=grey"
+                        href="persos_show.php?id=<?php echo $perso['id']; ?>">Détail</a>
                     </td>
+                    <td>
+                        <a
+                        class="btn"
+                        href="persos_del.php?id=<?php echo $perso['id']; ?>" onClick="return confirm('Voulez vous vraiment supprimer ce personnage ?');">Supprimer</a>
+                    </td>
+                    <td>
+                        <a href="persos_edit.php?id=<?php echo $perso['id']; ?>">Modifier</a>
+                    </td>
+                   
                 </tr>
             <?php } ?>
         </tbody>
     </table>
-    <?php
 
-if (isset($_POST['newname'])) {
-    changer_pseudo($_POST['newname']);
-}
-?>
+    
 
-<form action="modifier.php" method="post">
-    <label for="newname">Nouveau Nom:</label>
-    <input type="text" id="newname" name="newname">
-    <input type="submit" value="Update">
-</form>
 </body>
 </html>

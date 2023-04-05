@@ -1,6 +1,7 @@
 <?php 
 require_once('functions.php');
-require_once('modifier.php');
+
+
 if (!isset($_SESSION['user'])){
     header('Location: login.php');
 }
@@ -37,7 +38,7 @@ if (isset($_POST["send"])){
     <title>Document</title>
 </head>
 <body>
-    <?php require_once('nav.php'); ?>
+    <?php require_once('_nav.php'); ?>
     <h1>Créer un personnage</h1>
     <form action="" method="post">
         <div>

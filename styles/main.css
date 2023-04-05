@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.btn {
+    border:none;
+    padding:10px;
+    text-decoration: none;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+.btn-grey {
+    background-color: red;
+    color:white;
+
+}
+
+.btn-grey:hover {
+    background-color: yellow;
+    color: red;
+    
+}
+.btn-red {
+    background: lightcoral;
+    color: aliceblue;
+}
+
+.btn-red:hover {
+    background-color: darkred;
+}
