@@ -1,9 +1,7 @@
 <?php
 
     require_once('functions.php');
-
     if (isset($_POST["send"])) {
-        //dd($_POST);
         $bdd = connect();
         $sql = "SELECT * FROM users WHERE `email` = :email;";
         
@@ -14,10 +12,9 @@
         ]);
 
         $user = $sth->fetch();
-   
         
         if ($user && password_verify($_POST['password'], $user['password']) ) {
-
+            // dd($user);
             $_SESSION['user'] = $user;
             header('Location: persos.php');
         } else {
@@ -59,7 +56,7 @@
             />
         </div>
         <div>
-            <input type="submit" name="send" value="Créer" />
+            <input type="submit" name="send" value="Connexion" />
         </div>
     </form>
 </body>

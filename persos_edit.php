@@ -27,10 +27,20 @@
    
 ?>
 <?php require_once('_header.php'); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/modifier.css">
+    <title>Document</title>
+</head>
+<body>
 <h1>Modifications : </h1>
 <form action="" method="POST">
     <div>
-        <label for="name">name :</label>
+        <label for="name">NOM :</label>
         <input type="name" placeholder="Entrez le nom de votre personnage" name="name" id="name" />
     </div>
     <div>
@@ -43,6 +53,10 @@
     }
     ?>
 <div>
+    <br>
     <a href="persos.php" class="btn">Retour</a>
  </div>
 
+
+</body>
+</html>

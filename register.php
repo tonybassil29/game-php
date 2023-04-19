@@ -24,7 +24,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php require_once('nav.php'); ?>
+    <?php require_once('_nav.php'); ?>
     <form action="" method="post">
         <h1>Création de votre compte</h1>
         <div>
