@@ -1,4 +1,5 @@
 * {
+<<<<<<< HEAD
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -65,3 +66,96 @@
   }
   
  
+=======
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+.row {
+    display: flex;
+}
+
+.table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+h1 {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.btn {
+    border: none;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-blue {
+    background: blue;
+    color: white;
+}
+
+.btn-blue:hover {
+    background-color: lightsteelblue;
+}
+
+
+.btn-red {
+    background: red;
+    color: white;
+}
+
+
+.btn-red:hover {
+    background-color: lightsteelblue;
+}
+
+.btn-green {
+    background:green;
+    color:white;
+}
+
+.btn-green:hover {
+    background-color: lightseagreen;
+}
+
+
+
+.btn-yellow {
+    background: yellow;
+    color: white;
+}
+
+.btn-yellow:hover {
+    background-color: lightskyblue;
+}
+
+.mt-2 {
+    margin-top: 1.1rem;
+}
+
+.mt-4 {
+    margin-top: 2rem;
+}
+
+.name-cell {
+    padding-right: 10px;
+  }
+  
+  
+>>>>>>> d0636c6328272b588f0dcbe7d54ad4021ee2e247
