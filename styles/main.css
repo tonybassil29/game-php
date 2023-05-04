@@ -54,7 +54,7 @@ h1 {
 
 
 .btn-red:hover {
-    background-color: lightsteelblue;
+    background-color: orange;
 }
 
 .btn-green {
@@ -63,7 +63,7 @@ h1 {
 }
 
 .btn-green:hover {
-    background-color: lightseagreen;
+    background-color: purple;
 }
 
 
@@ -83,10 +83,19 @@ h1 {
 
 .mt-4 {
     margin-top: 2rem;
+    margin-right: 100px;
 }
 
 .name-cell {
     padding-right: 10px;
   }
-  
-  
+
+ .mt-6 {
+    padding-right: 150px;
+ }
+
+
+.mt-8 {
+    padding-left: 20px;
+}
+

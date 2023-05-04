@@ -1,5 +1,6 @@
 <?php
-class Ennemi 
+
+class Ennemi
 {
     // Définition des attributs
     public int $pol;
@@ -8,11 +9,11 @@ class Ennemi
     public int $constitution;
     public int $speed;
     public int $xp;
+    public int $gold;
 
-     //Fonction qui gère l'attaque
-    public function atk ()
+    // Fonction qui gère l'attaque.
+    public function atk()
     {
-       
+        
     }
 }
-

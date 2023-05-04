@@ -29,31 +29,33 @@ if (isset($_POST["send"])){
 }
 
 ?>
+ <?php require_once('_header.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/modifier.css">
     <title>Document</title>
 </head>
 <body>
     <?php require_once('_nav.php'); ?>
     <h1>Créer un personnage</h1>
-    <form action="" method="post">
-        <div>
-            <label>Nom</label>
-            <input type="text" 
-                id ="name"
-                name="name"
-                placeholder= "Entrer un nom"
-            />
-        </div>
-
-        <div>
-            <input type="submit" name="send" value = "Créer" />
-        </div>
-
+    <form action="" method="POST">
+    <div>
+        <label for="name">NOM :</label>
+        <input type="name" placeholder="Entrez le nom de votre personnage" name="name" id="name" />
+    </div>
+    <div>
+        <input type="submit" name="send" value="modifier" />
+    </div>
+    </form>
+   
+<div>
+    <br>
+    <a href="persos.php" class="btn">Retour</a>
+ </div>
 
       
 
