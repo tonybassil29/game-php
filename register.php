@@ -20,7 +20,7 @@
 <html>
 <head>
     <title>Page de Création</title>
-    <link rel="stylesheet" href="styles/test.css"> 
+    <link rel="stylesheet" href="styles/register_login.css"> 
 </head>
 <body>
     <div class="container">
