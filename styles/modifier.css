@@ -1,8 +1,8 @@
 
 body {
     font-family: sans-serif;
-    background-color: white;
-    color: black;
+    background-color: #222;
+    color: white;
     text-align: center;
   }
   
@@ -11,7 +11,7 @@ body {
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
-    border: 2px solid blue;
+    border: 2px solid orange;
     border-radius: 5px;
     text-align: center;
   }
@@ -30,7 +30,7 @@ body {
   }
   
   input[type="submit"] {
-    background-color: red;
+    background-color: orange;
     color: white;
     padding: 5px 10px;
     border: none;
@@ -54,7 +54,7 @@ h1 {
     text-align: center;
 }
   .success {
-    color: green;
+    color: orange;
     margin-top: 10px;
   }
   

@@ -32,7 +32,7 @@
     // On gere le tour de combat.
     // L'ennemi tape en premier
     if ($_SESSION['fight']['ennemi']->speed > $_SESSION['perso']['vit']) {
-        $_SESSION['fight']['html'][] = $ennemi->name . ' tape en premier';
+        $_SESSION['fight']['html'][] = $ennemi->name. ' tape en premier';
         
         $touche = random_int(0, 20);
         $_SESSION['fight']['html'][] = $touche;

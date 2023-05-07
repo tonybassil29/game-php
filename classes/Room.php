@@ -54,7 +54,10 @@ class Room {
                 $html .= "<a href='donjons_play.php?id=". $this->donjon_id ."' class='mt-8 btn btn-red'>Fuir et continuer l'exploration</a></p>";
                 break;
             
-
+            case 'salle_vie':
+                $html .= "<p class='mt-4'><a href='donjons_fight.php?id=". $this->donjon_id ."' class='mt-8 btn btn-green'>Réanimer</a>";
+                
+                break;
             
             default:
                 $html .= "<p>Aucune action possible !</p>";

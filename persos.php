@@ -35,14 +35,14 @@
             <tr>
                 <th width="2%">ID</th>
                 <th>Nom</th>
-                <th style="padding-right: 235px"; width="30%">Action</th>
+                <th style="padding-right: 95px"; width="30%">Action</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($persos as $perso) { ?>
                 <tr>
                 <td><?php echo $perso['id']; ?></td>
-                <td style="padding-left: 537px;"><?php echo $perso['name']; ?></td>
+                <td style="padding-left: 400px;"><?php echo $perso['name']; ?></td>
 
                     <td>
                        <a 

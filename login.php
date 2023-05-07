@@ -29,38 +29,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/register_login.css">
+    <link rel="stylesheet" href="styles/test.css">
     <title>Document</title>
 </head>
 <body>
     <?php require_once('_nav.php'); ?>
     <form action="" method="post">
-        <h1>Connexion</h1>
 
         <?php if (isset($msg)) { echo "<div>" . $msg . "</div>"; } ?>
 
-        <div>
-            <label for="email">Email</label>
-            <input 
-                type="email" 
-                placeholder="Entrez votre email" 
-                name="email" 
-                id="email" 
-            />
-        </div>
+        <div class="container">
+        <h2>Connexion sur votre compte</h2>
         <br>
-        <div>
-            <label for="password">Mot de passe</label>
-            <input 
-                type="password" 
-                placeholder="Entrez votre mot de passe" 
-                name="password" 
-                id="password" 
-            />
+        <form method="post" action="">
+            <div class="forme">
+                <label for="email">Email :</label>
+                <input placeholder="Entrer votre email" type="email" id="email" name="email" required>
+            </div>
+
+            <div class="forme">
+                <label for="password">Mot de passe :</label>
+                <input placeholder="Entrer votre mot de passe"type="password" id="password" name="password" required>
+            </div>
+
+        <div class="forme">
+            <button type="submit" name="send" value="Créer">Se connecter</button>
+
         </div>
-        <div>
-            <input type="submit" name="send" value="Connexion" />
-        </div>
-    </form>
+        </form>
+    </div>
 </body>
 </html>
