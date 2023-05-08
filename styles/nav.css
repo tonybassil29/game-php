@@ -5,10 +5,16 @@
     justify-content: end;
 }
 
+
+
 #nav a {
     color: aliceblue;
     text-decoration: none;
     padding: 10px;
     display: inline-block;
     background-color: none;
+}
+
+#nav a:hover {
+    background-color: rgba(241, 141, 2, 0.955);
 }

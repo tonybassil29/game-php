@@ -37,7 +37,10 @@ body {
     border-radius: 3px;
     cursor: pointer;
   }
-  
+  input[type="submit"]:hover {
+    background-color: rgba(241, 141, 2, 0.955);
+  }
+
   .btn {
     background-color: orange;
     color: white;
@@ -47,6 +50,10 @@ body {
     cursor: pointer;
     text-align: center;
 
+  }
+
+  .btn:hover {
+    background-color: rgba(241, 141, 2, 0.955);
   }
   
 

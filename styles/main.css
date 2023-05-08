@@ -89,6 +89,17 @@ h1 {
     text-align: center;
     cursor: pointer;
 }
+.barre-vie {
+    width: 200px;
+    height: 20px;
+    border: 1px solid #000;
+    background-color: #eee;
+}
+
+.barre-vie-progress {
+    height: 100%;
+    background-color: orange;
+}
 
 .btn-blue {
     background: orange;

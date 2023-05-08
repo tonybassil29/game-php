@@ -1,6 +1,15 @@
 <h2 class="mt-6"><?php echo $_SESSION['perso']['name']; ?></h2>
 <div class="mt-6">
-    <b>Point de vie:</b> <?php echo $_SESSION['perso']['pdv']; ?></h2>
+
+  <b>Point de vie:</b> <?php echo $_SESSION['perso']['pdv']; ?><b>%</b></h2>
+  <?php
+     $pourcentage = $_SESSION['perso']['pdv'];
+    ?>
+
+    <div class="barre-vie">
+        <div class="barre-vie-progress" style="width: <?php echo $pourcentage; ?>%;"></div>
+    </div>
+
 </div>
 <div class="mt-6">
     <b>Or:</b> <?php echo $_SESSION['perso']['gold']; ?></h2>

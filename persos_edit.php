@@ -44,7 +44,7 @@
         <input type="name" placeholder="Entrez le nom de votre personnage" name="name" id="name" />
     </div>
     <div>
-        <input type="submit" name="send" value="modifier" />
+        <input type="submit" name="send" value="Modifier" />
     </div>
     </form>
     <?php 
