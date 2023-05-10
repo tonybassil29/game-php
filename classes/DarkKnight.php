@@ -7,7 +7,7 @@ class DarkKnight extends Ennemi
     public function __construct()
     {
         $this->pol = 10;
-        $this->name = "Chevalier Noir";
+        $this->name = "Boxeur 3";
         $this->power = 15;
         $this->constitution = 15;
         $this->speed = 5;

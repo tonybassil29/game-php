@@ -20,7 +20,7 @@ if (isset($_POST["send"])){
             'int'  => rand (0,20),
             'char'  => rand (0,20),
             'vit'  => rand (0,20),
-            'pdv'  => 20 + rand(2, 4),
+            'pdv'  => 100,
             'user_id' => $_SESSION['user']['id']
         ]);
         header('Location: persos.php');

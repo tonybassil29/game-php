@@ -40,7 +40,17 @@
     margin: auto;
     flex-direction: column;
     align-items: center;
+   
   } 
+   
+  .container_fight {
+    width: 80%;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+  } 
+  
   
   #score {
     font-size: 36px;
@@ -56,7 +66,12 @@
     margin-bottom: 20px;
   }
   
- 
+  .image {
+    width: 230px;
+    right: 1000px;
+    position: absolute;
+  }
+
 
 
 
@@ -73,7 +88,11 @@ body {
 .table {
     width: 100%;
     margin-top: 20px;
+    border-collapse: collapse;
+    
+    
 }
+
 
 h1 {
     margin: 20px 0;
@@ -104,6 +123,8 @@ h1 {
 .btn-blue {
     background: orange;
     color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .btn-blue:hover {

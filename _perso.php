@@ -1,7 +1,7 @@
 <h2 class="mt-6"><?php echo $_SESSION['perso']['name']; ?></h2>
 <div class="mt-6">
 
-  <b>Point de vie:</b> <?php echo $_SESSION['perso']['pdv']; ?><b>%</b></h2>
+  <b>Point de vie:</b> <?php echo $_SESSION['perso']['pdv']; ?></h2>
   <?php
      $pourcentage = $_SESSION['perso']['pdv'];
     ?>

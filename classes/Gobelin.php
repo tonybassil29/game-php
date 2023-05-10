@@ -7,7 +7,7 @@ class Gobelin extends Ennemi
     public function __construct()
     {
         $this->pol = 3;
-        $this->name = "Gobelin";
+        $this->name = "Boxeur 2";
         $this->power = 10;
         $this->constitution = 8;
         $this->speed = 7;
