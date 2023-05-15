@@ -30,32 +30,35 @@
     $roomObject = new Room($room);
     $roomObject->makeAction();
 ?>
+
+
 <style>
     body {
         background-image: url(img/fondbox.jpg);
         background-size: cover;
-        background-position: center;
+        background-position: center center;
+        background-repeat: no-repeat;
     }
 </style>
-
-
 <?php require_once('_header.php'); ?>
     <div class="container_fight">
         <div class="row mt-4">
             <div class="px-4">
                 <?php require_once('_perso.php'); ?>
             </div>
-            <div class="">
+            <div class="display">
                 
-                <h1><?php echo $roomObject->getName(); ?></h1>
-                <p><?php echo $roomObject->getDescription(); ?></p>
+                <h1 class=""><?php echo $roomObject->getName(); ?></h1>
+                <p class= ""><?php echo $roomObject->getDescription(); ?></p>
                 <?php echo $roomObject->getHTML(); ?>
                 <br><br><br>
                 
             </div>
         </div>
     </div>
+   
     <br>
-    <img class="image" src="img/<?php echo $roomObject->picture; ?>"  />
+    
     </body>
 </html>
+

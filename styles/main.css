@@ -48,6 +48,9 @@
     margin: auto;
     flex-direction: column;
     align-items: center;
+    position:relative;
+    
+   
     background-color: rgba(255, 255, 255, 0.1);
   } 
   
@@ -98,6 +101,7 @@ h1 {
     margin: 20px 0;
     text-align: center;
 }
+
 
 .btn {
     border: none;
@@ -179,6 +183,7 @@ h1 {
 .mt-4 {
     margin-top: 2rem;
     margin-right: 100px;
+  
 }
 
 .name-cell {
@@ -195,3 +200,29 @@ h1 {
 }
 
 
+
+.btn-game {
+    background-color: orange;
+    color: white;
+    
+    
+}
+
+.btn-game:hover {
+    background-color: rgba(241, 141, 2, 0.955);
+    
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    padding-right: 180px;
+}
+
+.ennemi_principe {
+    position: absolute;
+    right: 0;
+}

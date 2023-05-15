@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: red;
+    background-color: orange;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -30,18 +30,18 @@ header a {
     margin: 20px auto;
     padding: 20px;
     border-radius: 5px;
-    background-color: red;
+    background-color: white;
 }
 
 .container h1 {
     margin: 0;
     text-align: center;
-    color: white;
+    color: #222;
 }
 
 .container h2 {
     margin-top: 30px;
-    color:purple;
+    color:#222;
 }
 
 
@@ -67,8 +67,8 @@ input[type="password"] {
 }
 
 input[type="submit"] {
-    background-color: blue;
-    color: white;
+    background-color: white;
+    color: #222;
     padding: 10px;
     border-radius: 5px;
     border: none;
@@ -80,12 +80,12 @@ input[type="submit"] {
 }
 
 input:hover[type="submit"]{
-    color:yellow;
-    background-color: red;
+    color:white;
+    background-color: rgba(241, 141, 2, 0.955);
 }
 .container div {
     margin-top: 20px;
     padding: 10px;
-    background-color:yellow;
+    background-color:orange;
     border-radius: 5px;
 }
