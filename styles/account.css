@@ -1,25 +1,5 @@
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: orange;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
-
-header h1 {
-    margin: 0;
-}
-
 header a {
-    color: white;
+    color: orange;
     text-decoration: none;
     font-weight: bold;
 }
@@ -30,18 +10,18 @@ header a {
     margin: 20px auto;
     padding: 20px;
     border-radius: 5px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .container h1 {
     margin: 0;
     text-align: center;
-    color: #222;
+    color: orange;
 }
 
 .container h2 {
     margin-top: 30px;
-    color:#222;
+    color:orange;
 }
 
 
@@ -67,8 +47,8 @@ input[type="password"] {
 }
 
 input[type="submit"] {
-    background-color: white;
-    color: #222;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
     padding: 10px;
     border-radius: 5px;
     border: none;
@@ -86,6 +66,6 @@ input:hover[type="submit"]{
 .container div {
     margin-top: 20px;
     padding: 10px;
-    background-color:orange;
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
 }

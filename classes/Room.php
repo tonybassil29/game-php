@@ -6,6 +6,7 @@ class Room {
     private string $type;
     private int $donjon_id;
     private int $or;
+    private int $equipement;
     public string $picture;
 
     public function __construct($room)
@@ -50,7 +51,9 @@ class Room {
 
             case 'treasur':
                 
-                $html .= "<p class='html-class'>Vous avez gagné " . $this->or . " pièce d'or</p>";
+                $html .= "<p class='html-class'>Vous avez gagné l'équipement " . $this->equipement . ".</p>";
+                $html .= "<p class='mt-4'><a href='donjons_recuperer.php?id=". $this->donjon_id ."' class='btn btn-game'>Récuperer votre équipement</a></p>";
+                $html .= "<p class='mt-4'><a href='donjons_equipement.php?id=". $this->donjon_id ."' class='btn btn-game'>Voir tous les équipements</a></p>";
                 $html .= "<p class='mt-4'><a href='donjons_play.php?id=". $this->donjon_id ."' class='btn btn-game'>Continuer l'exploration</a></p>";
                 break;
 
@@ -62,6 +65,7 @@ class Room {
             
             case 'salle_vie':
                 $html .= "<p class='mt-4'><a href='donjons_reanimer.php?id=". $this->donjon_id ."' class='btn btn-game'>Réanimer</a>";
+                $html .= "<p class='mt-4'><a href='donjons_play.php?id=". $this->donjon_id ."' class='btn btn-game'>Continuer l'exploration</a></p>";
                 break;
             
             default:
@@ -79,8 +83,37 @@ class Room {
                 break;
 
             case 'treasur':
-                $this->or = rand(0, 20);
-                $_SESSION['perso']['gold'] += $this->or;
+             
+
+                
+                if (!isset($_SESSION['equipement_counter'])) {
+                    $_SESSION['equipement_counter'] = 0;
+                }
+            
+                
+                if ($_SESSION['equipement_counter'] < 1) {
+
+                    $this->equipement = rand(1, 6);
+                    $_SESSION['perso']['id_equipement'] += $this->equipement;
+            
+                 
+                    $_SESSION['equipement_counter']++;
+            
+                    
+            
+                    $bdd = connect();
+                    $sql = "UPDATE persos SET `id_equipement` = :id_equipement WHERE id = :id AND user_id = :user_id;";    
+                    $sth = $bdd->prepare($sql);
+
+                  $sth->execute([
+                    'id_equipement'   => $_SESSION['perso']['id_equipement'],
+                    'id'        => $_SESSION['perso']['id'],
+                     'user_id'   => $_SESSION['user']['id']
+                 ]);
+               }
+               else {
+                echo "Vous avez déja récuperer un équipement ! Aucun autre équipement vous sera attribuez";
+               }
                 break;
 
             case 'combat':

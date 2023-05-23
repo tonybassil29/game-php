@@ -3,7 +3,7 @@ body {
     color: white;
 }
 
-.container {
+.container_reco {
     max-width: 400px;
     margin: 20px auto;
     padding: 20px;
@@ -13,16 +13,16 @@ body {
    
 }
 
-.forme {
+.forme_reco {
     margin-bottom: 15px;
 }
 
-.forme label {
+.forme_reco label {
     display: block;
     font-weight: bold;
 }
 
-.forme input {
+.forme_reco input {
     width: 100%;
     padding: 5px;
     border: 1px solid #555;
@@ -31,7 +31,7 @@ body {
     color: white;
 }
 
-.forme button {
+.forme_reco button {
     padding: 8px 16px;
     background-color: orange;
     color: white;
@@ -47,6 +47,6 @@ body {
     
 }
 
-.forme button:hover {
+.forme_reco button:hover {
     background-color: rgba(241, 141, 2, 0.955);
 }

@@ -15,6 +15,12 @@
     <b>Or:</b> <?php echo $_SESSION['perso']['gold']; ?></h2>
 </div>
 <div class="mt-6">
+    <b>Level:</b> <?php echo $_SESSION['perso']['level']; ?></h2>
+</div>
+<div class="mt-6">
+    <b>XP:</b> <?php echo $_SESSION['perso']['xp']; ?></h2>
+</div>
+<div class="mt-6">
     <b>Force:</b> <?php echo $_SESSION['perso']['for']; ?></h2>
 </div>
 <div class="mt-6">

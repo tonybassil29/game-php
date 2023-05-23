@@ -40,6 +40,15 @@
     }
 
 ?>
+<style>
+    body {
+        background-image: url(img/gant.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+</style>
+
 <?php require_once('_header.php'); ?>
 <!DOCTYPE html>
 <html lang="en">

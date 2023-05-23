@@ -22,8 +22,9 @@
 
 <?php require_once('_header.php'); ?>
 
-<div class="container">
-    <h1>Vos personnages</h1>
+<div class="container_custom">
+<h1 class="titre_custom">Vos personnages</h1>
+
     <a class="btn btn-purple" href="persos_add.php">Créer un personnage</a>
 
     <?php if (isset($_GET['msg'])) {
@@ -38,11 +39,24 @@
                 <th style="padding-right: 95px"; width="30%">Action</th>
             </tr>
         </thead>
+        <style>
+    body {
+        background-image: url('img/gant.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+
+</style>
         <tbody>
             <?php foreach ($persos as $perso) { ?>
                 <tr>
-                <td><?php echo $perso['id']; ?></td>
-                <td style="padding-left: 400px;"><?php echo $perso['name']; ?></td>
+                <td style="color: orange; font-weight: 900;"><?php echo $perso['id']; ?></td>
+                <td style="color: orange; padding-left: 500px; font-weight: 900;font-size: 20px;"><?php echo $perso['name']; ?></td>
+
 
                     <td>
                        <a 

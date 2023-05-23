@@ -30,6 +30,18 @@
     <link rel="stylesheet" href="styles/donjons.css">
     <title>Document</title>
 </head>
+<style>
+    body {
+        background-image: url('img/gant.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+
+</style>
 <body>
 
     <div class="container">
