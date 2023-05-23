@@ -20,7 +20,7 @@ if (isset($_POST["send"])){
         $idMaindominante = $sth->fetchColumn();
 
         
-        $sql = "INSERT INTO persos (`name`, `for`, `dex`, `int`, `char`, `vit`, `pdv`, `user_id`, `id_maindominante`) VALUES (:name, :for, :dex, :int, :char, :vit, :pdv, :user_id, :id_maindominante)";
+        $sql = "INSERT INTO persos (`name`, `for`, `dex`, `int`, `char`, `vit`, `pdv`,`reanimations`, `user_id`, `id_maindominante`) VALUES (:name, :for, :dex, :int, :char, :vit, :pdv,:reanimations, :user_id, :id_maindominante)";
         
        
         $sth = $bdd->prepare($sql);
@@ -32,6 +32,7 @@ if (isset($_POST["send"])){
             'char'  => rand (0,20),
             'vit'  => rand (0,20),
             'pdv'  => 25,
+            'reanimations'  => 0,
             'user_id' => $_SESSION['user']['id'],
             'id_maindominante' => $idMaindominante
         ]);

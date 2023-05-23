@@ -40,7 +40,8 @@ $persos = $sth ->fetchAll();
         if ($level === 100) {
             echo "Félicitations ! Vous avez atteint le niveau maximum et avez terminé le jeu.";
         } else {
-            echo "Level up! Nouveau niveau : " . $_SESSION['perso']['level'];
+            echo '<span style="font-size: 18px; font-weight: bold;">Level up! Nouveau niveau : ' . $_SESSION['perso']['level'] . '</span>';
+
         }
     }
 

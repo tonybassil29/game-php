@@ -1,3 +1,12 @@
+<style>
+    body {
+        background-image: url(img/fondbox.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+</style>
+
 <?php
 
     require_once('functions.php');
@@ -25,22 +34,14 @@
     ]);
 
     $room = $sth->fetch();
-
+     require_once('_header.php'); 
     require_once('./classes/Room.php');
     $roomObject = new Room($room);
     $roomObject->makeAction();
 ?>
 
 
-<style>
-    body {
-        background-image: url(img/fondbox.jpg);
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-</style>
-<?php require_once('_header.php'); ?>
+
     <div class="container_fight">
         <div class="row mt-4">
             <div class="px-4">

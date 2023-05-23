@@ -7,8 +7,9 @@ class Room {
     private int $donjon_id;
     private int $or;
     private int $equipement;
-    public string $picture;
-
+    private string $picture;
+    
+    
     public function __construct($room)
     {
         $this->name = $room['name'];
@@ -16,7 +17,15 @@ class Room {
         $this->type = $room['type'];
         $this->donjon_id = $room['donjon_id'];
         $this->picture = $room['picture'] ? $room['picture'] : "";
+        $this->equipement = 1;
 
+    }
+    public function setEquipement(int $equipement) {
+        $this->equipement = $equipement;
+    }
+
+    public function getEquipement() {
+        return $this->equipement;
     }
 
     public function getName(): string
@@ -51,9 +60,9 @@ class Room {
 
             case 'treasur':
                 
-                $html .= "<p class='html-class'>Vous avez gagné l'équipement " . $this->equipement . ".</p>";
+             
                 $html .= "<p class='mt-4'><a href='donjons_recuperer.php?id=". $this->donjon_id ."' class='btn btn-game'>Récuperer votre équipement</a></p>";
-                $html .= "<p class='mt-4'><a href='donjons_equipement.php?id=". $this->donjon_id ."' class='btn btn-game'>Voir tous les équipements</a></p>";
+                $html .= "<p class='mt-4'><a href='donjons_equipement.php?id=". $this->donjon_id ."' class='btn btn-game'>Voir ou Acheter des équipements</a></p>";
                 $html .= "<p class='mt-4'><a href='donjons_play.php?id=". $this->donjon_id ."' class='btn btn-game'>Continuer l'exploration</a></p>";
                 break;
 
@@ -78,44 +87,58 @@ class Room {
 
     public function makeAction(): void
     {
+        
+        $firstLoop = true;
+
+        if (!isset($_SESSION['equipement_counter']) || !isset($_SESSION['user']['id'])) {
+            $_SESSION['equipement_counter'] = 1;
+        }
+    
         switch ($this->type) {
             case 'vide':
                 break;
-
+    
             case 'treasur':
-             
-
                 
-                if (!isset($_SESSION['equipement_counter'])) {
-                    $_SESSION['equipement_counter'] = 0;
-                }
-            
-                
-                if ($_SESSION['equipement_counter'] < 1) {
+  
 
-                    $this->equipement = rand(1, 6);
-                    $_SESSION['perso']['id_equipement'] += $this->equipement;
-            
-                 
-                    $_SESSION['equipement_counter']++;
-            
-                    
-            
-                    $bdd = connect();
-                    $sql = "UPDATE persos SET `id_equipement` = :id_equipement WHERE id = :id AND user_id = :user_id;";    
-                    $sth = $bdd->prepare($sql);
+    
+    $bdd = connect();
+    $sql = "SELECT id_equipement FROM persos WHERE id = :id AND user_id = :user_id;";
+    $sth = $bdd->prepare($sql);
+    $sth->execute([
+        'id' => $_SESSION['perso']['id'],
+        'user_id' => $_SESSION['user']['id']
+    ]);
+    $result = $sth->fetch(PDO::FETCH_ASSOC);
 
-                  $sth->execute([
-                    'id_equipement'   => $_SESSION['perso']['id_equipement'],
-                    'id'        => $_SESSION['perso']['id'],
-                     'user_id'   => $_SESSION['user']['id']
-                 ]);
-               }
-               else {
-                echo "Vous avez déja récuperer un équipement ! Aucun autre équipement vous sera attribuez";
-               }
+    if ($result['id_equipement'] != 0) {
+        echo "Vous avez déjà récupéré un équipement ! Aucun autre équipement ne vous sera attribué.";
+    } else {
+        $this->equipement = rand(1, 6);
+        $_SESSION['perso']['id_equipement'] = $this->equipement;
+
+       
+        $sql = "UPDATE persos SET `id_equipement` = :id_equipement WHERE id = :id AND user_id = :user_id;";
+        $sth = $bdd->prepare($sql);
+
+        $sth->execute([
+            'id_equipement' => $_SESSION['perso']['id_equipement'],
+            'id' => $_SESSION['perso']['id'],
+            'user_id' => $_SESSION['user']['id']
+        ]);
+
+        $firstLoop = true;
+        $html = '';
+
+        if ($firstLoop) {
+            $html .= "<p class='html-class'>Vous avez gagné l'équipement " . $this->equipement . ".</p>";
+            $firstLoop = false;
+        }
+
+        echo $html;
+    }
                 break;
-
             case 'combat':
                 break;
             

@@ -57,6 +57,7 @@ if (!empty($results)) {
     <title>Document</title>
 </head>
 <body>
+    
     <br>
 <a href="donjons.php" class="btn btn-equipement">Return</a>
 </body>
