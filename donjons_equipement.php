@@ -16,65 +16,62 @@ if (!isset($_SESSION['selected_equipment'])) {
 }
 require_once('_header.php'); 
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $equipment = $_POST["equipment"];
+    if ($_POST['action'] === "Acheter") {
+        // Vérification du prix de l'équipement
+        $price = 0;
+        switch ($equipment) {
+            case "Gants de boxe":
+                $price = 50;
+                break;
+            case "Bandages de boxe":
+                $price = 20;
+                break;
+            case "Protège-dent":
+                $price = 10;
+                break;
+            case "Bouteille d'eau":
+                $price = 5;
+                break;
+            case "Corde à sauter":
+                $price = 15;
+                break;
+            case "Protège-tibias":
+                $price = 30;
+                break;
+        }
 
-    if (!empty($equipment)) {
-        if (in_array($equipment, $_SESSION['selected_equipment'])) {
-            $_SESSION['equipement_deja_choisi'] = "Équipement déjà visionné.";
+        // Vérification du solde d'or de l'utilisateur depuis la base de données
+        $bdd = connect();
+        $userId = $_SESSION['user']['id'];
+        $sql = "SELECT gold FROM persos WHERE user_id = :user_id";
+        $sth = $bdd->prepare($sql);
+        $sth->execute([
+            'user_id' => $userId
+        ]);
+        $persos = $sth->fetchAll();
+
+        $gold = $persos[0]['gold'];
+
+        if ($gold >= $price) {
+            // Achat de l'équipement et mise à jour de la base de données
+            $newGold = $gold - $price;
+            $sql = "UPDATE persos SET `gold` = :gold WHERE user_id = :user_id";
+            $sth = $bdd->prepare($sql);
+            $sth->execute([
+                'gold' => $newGold,
+                'user_id' => $userId
+            ]);
+
+            $_SESSION['selected_equipment'][] = $equipment;
+            echo "Vous avez réussi à acheter l'équipement : " . $equipment . " au prix de " . $price . " gold.";
         } else {
-            if ($_POST['action'] === "Acheter") {
-                // Vérification du prix de l'équipement
-                $price = 0;
-                switch ($equipment) {
-                    case "Gants de boxe":
-                        $price = 50;
-                        break;
-                    case "Bandages de boxe":
-                        $price = 20;
-                        break;
-                    case "Protège-dent":
-                        $price = 10;
-                        break;
-                    case "Bouteille d'eau":
-                        $price = 5;
-                        break;
-                    case "Corde à sauter":
-                        $price = 15;
-                        break;
-                    case "Protège-tibias":
-                        $price = 30;
-                        break;
-                }
-
-                // Vérification du solde d'or de l'utilisateur depuis la base de données
-                $bdd = connect();
-                $userId = $_SESSION['user']['id'];
-                $sql = "SELECT gold FROM persos WHERE user_id = :user_id";
-                $sth = $bdd->prepare($sql);
-                $sth->execute([
-                    'user_id' => $userId
-                ]);
-                $persos = $sth->fetchAll();
-
-                $gold = $persos[0]['gold'];
-
-                if ($gold >= $price) {
-                    // Achat de l'équipement et mise à jour de la base de données
-                    $newGold = $gold - $price;
-                    $sql = "UPDATE persos SET `gold` = :gold WHERE user_id = :user_id";
-                    $sth = $bdd->prepare($sql);
-                    $sth->execute([
-                        'gold' => $newGold,
-                        'user_id' => $userId
-                    ]);
-
-                    $_SESSION['selected_equipment'][] = $equipment;
-                    echo "Vous avez réussi à acheter l'équipement : " . $equipment . " au prix de " . $price . " gold.";
-                } else {
-                    echo "Vous n'avez pas assez d'or pour acheter cet équipement.";
-                }
-            } elseif ($_POST['action'] === "Visionner") {
+            echo "Vous n'avez pas assez d'or pour acheter cet équipement.";
+        }
+    } 
+   elseif (!empty($equipment)) {
+       if ($_POST['action'] == "Visionner") {
                 if (in_array($equipment, $_SESSION['selected_equipment'])) {
                     echo "Équipement déjà visionné.";
                 } else {
@@ -84,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             }
         }
     }
-}
+
 ?>
 
 <!DOCTYPE html>

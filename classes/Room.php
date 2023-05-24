@@ -111,9 +111,11 @@ class Room {
         'user_id' => $_SESSION['user']['id']
     ]);
     $result = $sth->fetch(PDO::FETCH_ASSOC);
-
     if ($result['id_equipement'] != 0) {
+        echo '<div style="text-align: center; margin-top: 0; font-weight: bold; font-size: 20px; background-color: rgba(255, 255, 255, 0.1) ; padding: 20px;">';
         echo "Vous avez déjà récupéré un équipement ! Aucun autre équipement ne vous sera attribué.";
+        echo '</div>';
+    
     } else {
         $this->equipement = rand(1, 6);
         $_SESSION['perso']['id_equipement'] = $this->equipement;
@@ -130,11 +132,11 @@ class Room {
 
         $firstLoop = true;
         $html = '';
-
         if ($firstLoop) {
-            $html .= "<p class='html-class'>Vous avez gagné l'équipement " . $this->equipement . ".</p>";
+            $html .= "<p class='html-class' style='font-weight: bold;text-align: center; font-size: 18px; background-color: rgba(255, 255, 255, 0.1); padding: 10px;'>Vous avez gagné l'équipement " . $this->equipement . ".</p>";
             $firstLoop = false;
         }
+        
 
         echo $html;
     }
